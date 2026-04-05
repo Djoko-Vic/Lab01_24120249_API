@@ -34,7 +34,7 @@ Dự án này triển khai mô hình `prompthero/openjourney` thành một **RES
 |----------|-------------|-----------|
 | `/` | `GET` | Xem thông tin API và mô hình đang dùng |
 | `/health` | `GET` | Kiểm tra trạng thái server và GPU |
-| `/generate` | `POST` | Nhận prompt văn bản → Trả về ảnh (base64) |
+| `/generate` | `POST` | Nhận prompt văn bản → Trả về ảnh (base64) và file JSON |
 
 **Luồng hoạt động:**
 ```
@@ -46,38 +46,30 @@ Dự án này triển khai mô hình `prompthero/openjourney` thành một **RES
 ---
 
 ## Hướng Dẫn Cài Đặt
-
-### Yêu Cầu Hệ Thống
-
-- Python **3.9 – 3.12**
-- RAM: tối thiểu **8 GB** (khuyến nghị 16 GB cho CPU)
-- GPU (tùy chọn): CUDA-compatible, VRAM ≥ 4 GB
-
 ### Bước 1 — Clone hoặc tải thư mục dự án
 
 ```bash
-# Nếu dùng git
 git clone <repository-url>
 cd Lab_1
-
-# Hoặc chỉ cần tải thư mục Lab_1
 ```
 
 ### Bước 2 — Tạo môi trường ảo (khuyến nghị)
-
+```bash
 python -m venv venv
-
+```
 # Windows
+```bash
 venv\Scripts\activate
-
+```
 # macOS / Linux
+```bash
 source venv/bin/activate
-
+```
 
 ### Bước 3 — Cài đặt thư viện
-
+```bash
 pip install -r requirements.txt
-
+```
 > ⏳ Lần đầu cài có thể mất 5–15 phút tùy kết nối mạng.
 
 ---
@@ -85,9 +77,9 @@ pip install -r requirements.txt
 ## Hướng Dẫn Chạy Chương Trình
 
 ### Khởi Động Server
-
+```bash
 python api_local.py
-
+```
 ### Chạy File Test
 
 Mở terminal **thứ hai**:
@@ -183,10 +175,3 @@ print("Ảnh đã lưu: output.png")
 > 🔗 **Link video demo:** *(https://youtu.be/...)*
 
 ---
-
-## Tham Khảo
-
-- [prompthero/openjourney — Hugging Face](https://huggingface.co/prompthero/openjourney)
-- [FastAPI Documentation](https://fastapi.tiangolo.com/)
-- [Diffusers Library](https://huggingface.co/docs/diffusers/)
-- [Stable Diffusion Paper](https://arxiv.org/abs/2112.10752)

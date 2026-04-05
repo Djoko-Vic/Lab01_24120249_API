@@ -44,7 +44,7 @@ def test_api():
 
         if response.status_code == 200:
             data = response.json()
-            print("✅ API trả kết quả thành công!")
+            print("API trả kết quả thành công!")
 
             # Lưu ảnh ra file
             timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
@@ -70,7 +70,7 @@ def test_api():
             print(response.text)
 
     except requests.exceptions.Timeout:
-        print("⏱Timeout!")
+        print("Timeout!")
     except Exception as e:
         print(f"Lỗi: {e}")
 
