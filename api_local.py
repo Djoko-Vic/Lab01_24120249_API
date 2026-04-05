@@ -1,13 +1,3 @@
-"""
-API Local - OpenJourney Text-to-Image
-Chạy trên máy tính cục bộ (CPU mode)
-
-Cách chạy:
-1. Cài thư viện: pip install fastapi uvicorn diffusers transformers torch accelerate
-2. Chạy server: python api_local.py
-3. Truy cập API tại: http://localhost:8000
-"""
-
 import torch
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -29,7 +19,7 @@ dtype = torch.float16 if device == "cuda" else torch.float32
 
 print(f"  Thiết bị: {device.upper()}")
 if device == "cpu":
-    print("  ⚠️  Chạy trên CPU sẽ chậm hơn GPU (mỗi ảnh ~2-5 phút)")
+    print("   Chạy trên CPU sẽ chậm hơn GPU (mỗi ảnh ~2-5 phút)")
 
 pipe = StableDiffusionPipeline.from_pretrained(
     model_id,
@@ -39,7 +29,7 @@ pipe = StableDiffusionPipeline.from_pretrained(
 )
 pipe = pipe.to(device)
 
-print("✅ Tải mô hình thành công!\n")
+print("Tải mô hình thành công!\n")
 
 # KHỞI TẠO FASTAPI
 app = FastAPI(title="OpenJourney Text-to-Image API (Local)")
@@ -80,7 +70,7 @@ async def generate_image(req: GenerateRequest):
 
     try:
         full_prompt = f"mdjrny-v4 style, {req.prompt}"
-        print(f"🎨 Đang sinh ảnh cho prompt: '{req.prompt}'")
+        print(f"Đang sinh ảnh cho prompt: '{req.prompt}'")
 
         image = pipe(full_prompt).images[0]
 
@@ -88,7 +78,7 @@ async def generate_image(req: GenerateRequest):
         image.save(buffered, format="PNG")
         img_str = base64.b64encode(buffered.getvalue()).decode("utf-8")
 
-        print("✅ Sinh ảnh thành công!")
+        print("Sinh ảnh thành công!")
         return {
             "prompt_received": req.prompt,
             "status": "success",
@@ -100,7 +90,7 @@ async def generate_image(req: GenerateRequest):
 
 # CHẠY SERVER
 if __name__ == "__main__":
-    print("🚀 Khởi động server FastAPI tại http://localhost:8000")
+    print("   Khởi động server FastAPI tại http://localhost:8000")
     print("   Docs: http://localhost:8000/docs")
     print("   Nhấn Ctrl+C để dừng\n")
     uvicorn.run(app, host="0.0.0.0", port=8000)
