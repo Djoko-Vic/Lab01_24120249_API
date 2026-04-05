@@ -172,6 +172,6 @@ print("Ảnh đã lưu: output.png")
 
 ## Video Demo
 
-> 🔗 **Link video demo:** *(https://youtu.be/3re1u9y-UOo)*
+[![Video Demo API OpenJourney](https://img.youtube.com/vi/3re1u9y-UOo/maxresdefault.jpg)](https://youtu.be/3re1u9y-UOo)
 
 ---
