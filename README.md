@@ -11,7 +11,6 @@
 |---------------|--------------------------------------|
 | **Họ và tên** | Võ Nguyễn Việt Hoàng                |
 | **MSSV**      | 24120249                             |
-| **Trường**    | ĐH Khoa Học Tự Nhiên TP.HCM (KHTN) |
 | **Môn học**   | Computational Thinking               |
 
 ---
