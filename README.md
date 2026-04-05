@@ -172,6 +172,6 @@ print("Ảnh đã lưu: output.png")
 
 ## Video Demo
 
-> 🔗 **Link video demo:** *(https://youtu.be/...)](https://youtu.be/3re1u9y-UOo)*
+> 🔗 **Link video demo:** *(https://youtu.be/3re1u9y-UOo)*
 
 ---
